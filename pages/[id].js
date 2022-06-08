@@ -47,8 +47,10 @@ const Details = ({ item }) => {
         <p>{moment(item.createdAt).format("MMM DD, YYYY")}</p>
         <h3>{item.description}</h3>
         <div className="tagContainer">
-          {tags.map((tag) => (
-            <p className="tag">#{tag}</p>
+          {tags.map((tag, index) => (
+            <p className="tag" key={index}>
+              #{tag}
+            </p>
           ))}
         </div>
       </div>

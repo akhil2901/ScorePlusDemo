@@ -1,6 +1,5 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { useEffect } from "react";
 import Link from "next/link";
 
 export async function getStaticProps() {
@@ -14,9 +13,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ data }) {
-  useEffect(() => {
-    console.log("line 18", data);
-  }, []);
   return (
     <div className={styles.container}>
       <Head>
@@ -29,7 +25,7 @@ export default function Home({ data }) {
         <div className={styles.grid}>
           {data.map((item) => {
             return (
-              <Link href={"/" + item.id}>
+              <Link href={"/" + item.id} key={item.id + item.title}>
                 <a href="https://nextjs.org/docs" className={styles.card}>
                   <h2>{item.title} &rarr;</h2>
                   <p>{item.description}</p>
