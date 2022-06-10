@@ -66,5 +66,15 @@ footer {
   text-decoration: underline;
   cursor: pointer;
 }
+ .video {
+   width: 45vw;
+   height: 45vh;
+ }
 
+@media (max-width: 600px) {
+  .video {
+    width: 90vw;
+    height: 30vh;
+  }
+}
 
