@@ -33,21 +33,16 @@ export async function getStaticProps(context) {
 }
 
 const Details = ({ item }) => {
+  console.log("item", item);
   const tags = item.tags.split(",");
   return (
     <div>
       <Head>
         <title>Score Plus</title>
-        {/* <meta name="viewport" content="width=device-width, initial-scale=1.0" /> */}
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="video">
-        <ReactPlayer
-          url={"https://www.youtube.com/watch?v=Edoass0xKwU"}
-          controls
-          height={"100%"}
-          width={"100%"}
-        />
+        <ReactPlayer url={item.link} controls height={"100%"} width={"100%"} />
       </div>
       <div className="info">
         <h1>{item.title}</h1>
